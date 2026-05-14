@@ -1,0 +1,258 @@
+{
+  "site": {
+    "name": "Velvet Lounge",
+    "city": "Nocturne Bay",
+    "country": "Luminaria",
+    "tagline": "Late-night cocktails & velvet beats.",
+    "description": "Velvet Lounge is an intimate nightclub in the heart of Nocturne Bay, blending signature cocktails, deep house, and velvet-lit interiors for late-night conversations and dance-floor moments."
+  },
+  "navigation": {
+    "links": [
+      { "label": "Events", "href": "#events" },
+      { "label": "VIP Tables", "href": "#vip" },
+      { "label": "Menu", "href": "#menu" },
+      { "label": "Gallery", "href": "#gallery" },
+      { "label": "Find Us", "href": "#location" }
+    ],
+    "cta": "Book a table"
+  },
+  "hero": {
+    "badge": "Nocturne Bay • Old Quarter",
+    "title": "Velvet Lounge",
+    "headline": "A velvet-lit night for",
+    "highlight": "late stories & slow house.",
+    "subheadline": "Signature cocktails, curated DJs, and a low-light lounge atmosphere until late. Reserve your table and arrive when the lights are already dim.",
+    "primaryCta": "Book a table",
+    "secondaryCta": "View upcoming events",
+    "scrollCta": "Scroll to explore"
+  },
+  "about": {
+    "title": "About",
+    "highlight": "Velvet Lounge",
+    "description": "Hidden just off Nocturne Bay’s Old Quarter streets, Velvet Lounge is built for long nights, small groups, and good sound. A room tuned for deep house, disco, and electronic sets with just enough energy to keep you until closing.",
+    "highlights": [
+      { "label": "Music", "value": "Deep house, disco, electronic" },
+      { "label": "Dress code", "value": "Smart casual" },
+      { "label": "Age", "value": "21+ only" }
+    ],
+    "stats": [
+      { "label": "Capacity", "value": "120 guests" },
+      { "label": "VIP tables", "value": "10 tables" },
+      { "label": "Open", "value": "Thu – Sat • 20:00–04:00" }
+    ]
+  },
+  "events": {
+    "title": "Upcoming",
+    "highlight": "Nights",
+    "subtitle": "Rotating DJs, themed nights, and one-off takeovers.",
+    "items": [
+      {
+        "date": "Fri • 12 Apr",
+        "name": "Velvet Fridays",
+        "artist": "DJ Lina V.",
+        "tag": "Deep House",
+        "description": "Warm-up grooves and deep cuts until late. Ideal for small groups and bottle service.",
+        "ctaLabel": "Book table"
+      },
+      {
+        "date": "Sat • 13 Apr",
+        "name": "Midnight Stories",
+        "artist": "Markus Len",
+        "tag": "House & Disco",
+        "description": "House & disco selections with a focus on groove, not volume.",
+        "ctaLabel": "Reserve VIP"
+      },
+      {
+        "date": "Thu • 18 Apr",
+        "name": "Industry Night",
+        "artist": "Local Residents",
+        "tag": "Industry",
+        "description": "A slower Thursday for F&B and hospitality people with extended happy hour.",
+        "ctaLabel": "Join guestlist"
+      }
+    ]
+  },
+  "vip": {
+    "title": "VIP Tables &",
+    "highlight": "Bottle Service",
+    "subtitle": "Arrive when the room is already tuned. We’ll take care of the rest.",
+    "description": "Priority entrance, reserved seating, and a dedicated host for your night. Choose the table that fits your group and let us handle the flow.",
+    "perks": [
+      "Priority entrance & dedicated host",
+      "Curated bottle list & signature cocktails",
+      "Mixers included with all bottle packages",
+      "Custom celebration setup on request"
+    ],
+    "packages": [
+      {
+        "name": "Velvet Table",
+        "minSpend": "$300–$500",
+        "guests": "up to 4 guests",
+        "description": "Perfect for small groups who want a base and bottle service without the spotlight.",
+        "includes": [
+          "Standard spirits & mixers",
+          "Preferred seating near lounge area",
+          "Table service all night"
+        ],
+        "highlighted": false
+      },
+      {
+        "name": "Lounge Corner",
+        "minSpend": "$550–$850",
+        "guests": "up to 6 guests",
+        "description": "Corner lounge seating with line of sight to the DJ booth.",
+        "includes": [
+          "Premium spirits & champagne options",
+          "Welcome round of signature shots",
+          "Custom birthday or celebration setup"
+        ],
+        "highlighted": true
+      },
+      {
+        "name": "Velvet Room",
+        "minSpend": "$950+",
+        "guests": "up to 10 guests",
+        "description": "For bigger celebrations that need the best seats in the room.",
+        "includes": [
+          "Top-shelf spirits & champagne",
+          "Priority entrance for your group",
+          "Dedicated host & bottle server"
+        ],
+        "highlighted": false
+      }
+    ],
+    "note": "Prices and availability vary by night. We’ll confirm your reservation and minimum spend by WhatsApp."
+  },
+  "menu": {
+    "title": "Signature",
+    "highlight": "Menu",
+    "subtitle": "Cocktails built for low light and late-night stories.",
+    "signatureCocktails": [
+      {
+        "name": "Velvet Sour",
+        "description": "Whisky, hibiscus, citrus, and a velvet foam finish.",
+        "price": "$16"
+      },
+      {
+        "name": "Old Town Negroni",
+        "description": "House-blend gin, bitters, and a subtle smoke.",
+        "price": "$15"
+      },
+      {
+        "name": "Midnight Fizz",
+        "description": "Vodka, elderflower, citrus, soda, and a violet twist.",
+        "price": "$14"
+      },
+      {
+        "name": "Low Light Spritz",
+        "description": "Aperitif, prosecco, and a darker, berry-forward profile.",
+        "price": "$14"
+      }
+    ],
+    "bottles": [
+      { "category": "Vodka", "from": "from $150" },
+      { "category": "Gin", "from": "from $140" },
+      { "category": "Whisky", "from": "from $165" },
+      { "category": "Champagne", "from": "from $200" }
+    ],
+    "ctaLabel": "Request full menu"
+  },
+  "gallery": {
+    "title": "Inside",
+    "highlight": "Velvet",
+    "subtitle": "Mood, lights, and just enough haze.",
+    "items": [
+      {
+        "label": "Main Room",
+        "tag": "Dancefloor",
+        "imageSrc": "/images/gallery/dancefloor-main-room.png"
+      },
+      {
+        "label": "Lounge Corners",
+        "tag": "Seating",
+        "imageSrc": "/images/gallery/seating-lounge-corners.png"
+      },
+      {
+        "label": "Velvet Bar",
+        "tag": "Cocktails",
+        "imageSrc": "/images/gallery/cocktails-velvet-bar.png"
+      },
+      {
+        "label": "DJ Booth",
+        "tag": "Music",
+        "imageSrc": "/images/gallery/music-dj-booth.png"
+      },
+      {
+        "label": "Details",
+        "tag": "Design",
+        "imageSrc": "/images/gallery/design-details.png"
+      },
+      {
+        "label": "Late Night",
+        "tag": "Atmosphere",
+        "imageSrc": "/images/gallery/atmosphere-late-night.png"
+      }
+    ]
+  },
+  "location": {
+    "title": "Find",
+    "highlight": "Us",
+    "subtitle": "Tucked just off the main Old Town streets.",
+    "address": "12 Velvet Row, Nocturne Bay, CA 94107, Luminaria",
+    "mapLabel": "Velvet Lounge — Old Quarter, Nocturne Bay",
+    "hours": [
+      { "day": "Thursday", "time": "20:00 – 02:00" },
+      { "day": "Friday", "time": "20:00 – 04:00" },
+      { "day": "Saturday", "time": "20:00 – 04:00" }
+    ],
+    "contacts": {
+      "phone": "+1 (415) 555-0137",
+      "whatsapp": "+1 (415) 555-0137",
+      "email": "bookings@velvetlounge.noct",
+      "instagram": "https://instagram.com/velvetlounge.nocturnebay",
+      "tiktok": "https://www.tiktok.com/@velvetlounge",
+      "facebook": "https://facebook.com/velvetlounge.nocturnebay"
+    }
+  },
+  "reservation": {
+    "title": "Book a",
+    "highlight": "Table",
+    "subtitle": "Tell us who’s coming and when. We’ll confirm details by WhatsApp or email.",
+    "form": {
+      "name": "Full name",
+      "email": "Email address",
+      "phone": "Phone or WhatsApp",
+      "date": "Date",
+      "time": "Time",
+      "guests": "Number of guests",
+      "occasion": "Occasion (birthday, industry, etc.)",
+      "message": "Anything we should know?",
+      "submit": "Send request"
+    },
+    "expectations": {
+      "title": "What happens next:",
+      "items": [
+        "You’ll get a reply within 24 hours.",
+        "We’ll confirm your table, time, and minimum spend.",
+        "For last-minute bookings, please call or WhatsApp."
+      ]
+    }
+  },
+  "footer": {
+    "disclaimer": "Velvet Lounge promotes responsible enjoyment. Entry strictly 21+ with valid ID.",
+    "links": {
+      "primary": [
+        { "label": "Events", "href": "#events" },
+        { "label": "VIP Tables", "href": "#vip" },
+        { "label": "Menu", "href": "#menu" },
+        { "label": "Find Us", "href": "#location" }
+      ],
+      "legal": [
+        { "label": "Privacy Policy", "href": "/privacy" },
+        { "label": "Terms of Service", "href": "/terms" }
+      ]
+    },
+    "copyright":
+      "© 2025 Velvet Lounge. All rights reserved. Please drink responsibly."
+  }
+}
