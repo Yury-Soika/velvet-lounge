@@ -38,6 +38,8 @@ ssh -p "${SSH_PORT}" "${USER}@${HOST}" bash -lc "
   tar xzf production-build.tar.gz
   echo ' -> Removing real node_modules (CloudLinux uses venv symlink)'
   rm -rf node_modules
+  echo ' -> Removing next.config.ts so Next uses next.config.js (no TypeScript at runtime)'
+  rm -f next.config.ts
   echo ' -> Done. In the hosting panel: run Install dependencies (if needed), then Restart app.'
 "
 
