@@ -23,14 +23,7 @@ const Navbar = () => {
           <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-tr from-purple-500 to-pink-500 text-slate-50 shadow-lg shadow-purple-500/40">
             <Disc3 className="h-4 w-4" />
           </span>
-          <div className="flex flex-col">
-            <span className="text-sm font-semibold tracking-tight">
-              {site.name}
-            </span>
-            <span className="text-[11px] uppercase tracking-[0.22em] text-slate-400">
-              {site.city} • Nightclub
-            </span>
-          </div>
+          <span className="text-sm font-semibold tracking-tight">{site.name}</span>
         </a>
 
         <div className="hidden items-center gap-8 md:flex">

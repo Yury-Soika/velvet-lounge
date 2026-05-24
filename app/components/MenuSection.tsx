@@ -1,3 +1,6 @@
+'use client';
+
+import { motion } from "framer-motion";
 import { getMenu } from "../utils/content";
 
 const MenuSection = () => {
@@ -5,7 +8,13 @@ const MenuSection = () => {
 
   return (
     <section id="menu" className="vl-section">
-      <div className="mb-8 space-y-3">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className="mb-10 space-y-3"
+      >
         <p className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-300">
           {menu.title}
         </p>
@@ -16,24 +25,26 @@ const MenuSection = () => {
           </span>
         </h2>
         <p className="vl-subtitle">{menu.subtitle}</p>
-      </div>
+      </motion.div>
 
-      <div className="grid gap-6 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)]">
+      <motion.div
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6, delay: 0.1 }}
+        className="grid gap-6 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)]"
+      >
         <div className="vl-card space-y-4">
           {menu.signatureCocktails.map((drink) => (
             <div
               key={drink.name}
-              className="flex items-start justify-between gap-3 border-b border-white/10 pb-3"
+              className="flex items-start justify-between gap-3 border-b border-white/10 pb-3 last:border-0 last:pb-0"
             >
               <div>
-                <h3 className="text-base font-semibold text-slate-100">
-                  {drink.name}
-                </h3>
+                <h3 className="text-base font-semibold text-slate-100">{drink.name}</h3>
                 <p className="text-sm text-slate-300">{drink.description}</p>
               </div>
-              <span className="text-sm font-semibold text-slate-100">
-                {drink.price}
-              </span>
+              <span className="shrink-0 text-sm font-semibold text-slate-100">{drink.price}</span>
             </div>
           ))}
         </div>
@@ -41,12 +52,9 @@ const MenuSection = () => {
         <div className="vl-card flex flex-col gap-4">
           <h3 className="text-base font-semibold text-slate-100">Bottle menu</h3>
           {menu.bottles.map((bottle) => (
-            <div
-              key={bottle.category}
-              className="flex items-center justify-between text-sm text-slate-300"
-            >
+            <div key={bottle.category} className="flex items-center justify-between border-b border-white/5 pb-2 text-sm text-slate-300 last:border-0 last:pb-0">
               <span>{bottle.category}</span>
-              <span>{bottle.from}</span>
+              <span className="text-slate-100">{bottle.from}</span>
             </div>
           ))}
           <a
@@ -56,7 +64,7 @@ const MenuSection = () => {
             {menu.ctaLabel}
           </a>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

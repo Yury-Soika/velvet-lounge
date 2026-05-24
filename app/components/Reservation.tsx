@@ -1,7 +1,11 @@
- "use client";
+"use client";
 
+import { motion } from "framer-motion";
 import { useState } from "react";
 import { getReservation } from "../utils/content";
+
+const inputCls =
+  "w-full rounded-xl border border-white/10 bg-black/20 px-4 py-3 text-sm text-slate-100 outline-none ring-purple-400/50 placeholder:text-slate-500 focus:ring transition-colors";
 
 const Reservation = () => {
   const reservation = getReservation();
@@ -16,7 +20,13 @@ const Reservation = () => {
 
   return (
     <section id="reservation" className="vl-section">
-      <div className="mb-8 space-y-3">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className="mb-10 space-y-3"
+      >
         <p className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-300">
           {reservation.title}
         </p>
@@ -27,64 +37,35 @@ const Reservation = () => {
           </span>
         </h2>
         <p className="vl-subtitle">{reservation.subtitle}</p>
-      </div>
+      </motion.div>
 
-      <div className="grid gap-6 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)]">
-        <form
-          className="vl-card grid gap-4 sm:grid-cols-2"
-          onSubmit={handleSubmit}
-          noValidate
-        >
-          <input
-            type="text"
-            placeholder={labels.name}
-            className="rounded-xl border border-white/10 bg-black/20 px-4 py-3 text-sm text-slate-100 outline-none ring-purple-400/50 placeholder:text-slate-500 focus:ring"
-          />
-          <input
-            type="email"
-            placeholder={labels.email}
-            className="rounded-xl border border-white/10 bg-black/20 px-4 py-3 text-sm text-slate-100 outline-none ring-purple-400/50 placeholder:text-slate-500 focus:ring"
-          />
-          <input
-            type="tel"
-            placeholder={labels.phone}
-            className="rounded-xl border border-white/10 bg-black/20 px-4 py-3 text-sm text-slate-100 outline-none ring-purple-400/50 placeholder:text-slate-500 focus:ring"
-          />
-          <input
-            type="date"
-            aria-label={labels.date}
-            className="rounded-xl border border-white/10 bg-black/20 px-4 py-3 text-sm text-slate-100 outline-none ring-purple-400/50 focus:ring"
-          />
-          <input
-            type="time"
-            aria-label={labels.time}
-            className="rounded-xl border border-white/10 bg-black/20 px-4 py-3 text-sm text-slate-100 outline-none ring-purple-400/50 focus:ring"
-          />
+      <motion.div
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6, delay: 0.1 }}
+        className="grid gap-6 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)]"
+      >
+        <form className="vl-card grid gap-4 sm:grid-cols-2" onSubmit={handleSubmit} noValidate>
+          <input type="text" placeholder={labels.name} className={inputCls} />
+          <input type="email" placeholder={labels.email} className={inputCls} />
+          <input type="tel" placeholder={labels.phone} className={inputCls} />
+          <input type="date" aria-label={labels.date} className={inputCls} />
           <input
             type="number"
             min={1}
             placeholder={labels.guests}
-            className="rounded-xl border border-white/10 bg-black/20 px-4 py-3 text-sm text-slate-100 outline-none ring-purple-400/50 placeholder:text-slate-500 focus:ring"
-          />
-          <input
-            type="text"
-            placeholder={labels.occasion}
-            className="rounded-xl border border-white/10 bg-black/20 px-4 py-3 text-sm text-slate-100 outline-none ring-purple-400/50 placeholder:text-slate-500 focus:ring sm:col-span-2"
-          />
-          <textarea
-            placeholder={labels.message}
-            rows={4}
-            className="rounded-xl border border-white/10 bg-black/20 px-4 py-3 text-sm text-slate-100 outline-none ring-purple-400/50 placeholder:text-slate-500 focus:ring sm:col-span-2"
+            className={`${inputCls} sm:col-span-2`}
           />
           <button
             type="submit"
-            className="sm:col-span-2 inline-flex items-center justify-center rounded-full bg-accent px-6 py-3 text-xs font-semibold uppercase tracking-[0.22em] text-slate-950 transition hover:bg-accent-soft"
+            className="sm:col-span-2 inline-flex items-center justify-center rounded-full bg-accent px-6 py-3 text-xs font-semibold uppercase tracking-[0.22em] text-slate-950 transition hover:bg-accent-soft shadow-lg shadow-purple-500/30"
           >
             {labels.submit}
           </button>
           {isSubmitted && (
             <div className="sm:col-span-2 rounded-xl border border-emerald-400/30 bg-emerald-500/10 px-4 py-3 text-sm text-emerald-200">
-              We got your request. Our team will contact you soon with confirmation details.
+              We got your request. Our team will confirm within 24 hours via WhatsApp or email.
             </div>
           )}
         </form>
@@ -93,16 +74,16 @@ const Reservation = () => {
           <p className="text-xs uppercase tracking-[0.22em] text-slate-400">
             {reservation.expectations.title}
           </p>
-          <ul className="mt-4 space-y-2 text-sm text-slate-300">
+          <ul className="mt-4 space-y-3 text-sm text-slate-300">
             {reservation.expectations.items.map((item) => (
-              <li key={item} className="flex items-start gap-2">
-                <span className="mt-1 inline-flex h-1.5 w-1.5 rounded-full bg-emerald-400" />
+              <li key={item} className="flex items-start gap-2.5">
+                <span className="mt-1.5 inline-flex h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-400" />
                 <span>{item}</span>
               </li>
             ))}
           </ul>
         </aside>
-      </div>
+      </motion.div>
     </section>
   );
 };
