@@ -169,8 +169,10 @@ export type VelvetContent = {
     links: {
       primary: FooterLinksGroup[];
       legal: FooterLinksGroup[];
+      social?: FooterLinksGroup[];
     };
     copyright: string;
+    builtBy?: { label: string; href: string };
   };
 };
 

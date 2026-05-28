@@ -198,7 +198,7 @@
     "title": "Find",
     "highlight": "Us",
     "subtitle": "Tucked just off the main Old Town streets.",
-    "address": "12 Velvet Row, Nocturne Bay, CA 94107, Luminaria",
+    "address": "12 Velvet Row, Old Quarter, Nocturne Bay, Luminaria",
     "mapLabel": "Velvet Lounge — Old Quarter, Nocturne Bay",
     "hours": [
       { "day": "Thursday", "time": "20:00 – 02:00" },
@@ -250,9 +250,16 @@
       "legal": [
         { "label": "Privacy Policy", "href": "/privacy" },
         { "label": "Terms of Service", "href": "/terms" }
+      ],
+      "social": [
+        { "label": "Instagram", "href": "https://instagram.com/velvetlounge" },
+        { "label": "TikTok", "href": "https://tiktok.com/@velvetlounge" }
       ]
     },
-    "copyright":
-      "© 2025 Velvet Lounge. All rights reserved. Please drink responsibly."
+    "copyright": "© 2026 Velvet Lounge. All rights reserved. Please drink responsibly.",
+    "builtBy": {
+      "label": "Built by Plex",
+      "href": "https://plex.ee"
+    }
   }
 }
