@@ -21,13 +21,13 @@ export const metadata: Metadata = {
     url: 'https://velvet.plex.ee',
     title: 'Velvet Lounge — Nightclub in Nocturne Bay',
     description: 'VIP tables, signature cocktails, and late-night events — an intimate luxury nightclub experience in Nocturne Bay.',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Velvet Lounge' }],
+    images: [{ url: '/og-image-v2.png', width: 1200, height: 630, alt: 'Velvet Lounge' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Velvet Lounge — Nightclub in Nocturne Bay',
     description: 'VIP tables, signature cocktails, and late-night events — an intimate luxury nightclub experience in Nocturne Bay.',
-    images: ['/og-image.png'],
+    images: ['/og-image-v2.png'],
   },
 };
 
