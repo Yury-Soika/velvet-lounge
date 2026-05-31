@@ -13,9 +13,22 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://velvet.plex.ee'),
   title: "Velvet Lounge — Nightclub in Nocturne Bay",
-  description:
-    "Velvet Lounge is a premium nightclub experience in Nocturne Bay. VIP tables, signature cocktails, and late-night events in an intimate lounge atmosphere.",
+  description: "Velvet Lounge is a premium nightclub experience in Nocturne Bay. VIP tables, signature cocktails, and late-night events in an intimate lounge atmosphere.",
+  openGraph: {
+    type: 'website',
+    url: 'https://velvet.plex.ee',
+    title: 'Velvet Lounge — Nightclub in Nocturne Bay',
+    description: 'VIP tables, signature cocktails, and late-night events in an intimate lounge atmosphere.',
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Velvet Lounge' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Velvet Lounge — Nightclub in Nocturne Bay',
+    description: 'VIP tables, signature cocktails, and late-night events in an intimate lounge atmosphere.',
+    images: ['/og-image.png'],
+  },
 };
 
 export default function RootLayout({
