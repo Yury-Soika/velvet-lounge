@@ -10,12 +10,31 @@ const inputCls =
 const Reservation = () => {
   const reservation = getReservation();
   const labels = reservation.form;
-  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [status, setStatus] = useState<"idle" | "demo" | "error">("idle");
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    setIsSubmitted(true);
-    event.currentTarget.reset();
+    const form = event.currentTarget;
+    const data = new FormData(form);
+    const email = String(data.get("email") ?? "").trim();
+    const phone = String(data.get("phone") ?? "").trim();
+
+    if (!form.checkValidity()) {
+      setStatus("error");
+      form.reportValidity();
+      return;
+    }
+
+    if (!email && !phone) {
+      setStatus("error");
+      form.querySelector<HTMLInputElement>("#reservation-email")?.focus();
+      return;
+    }
+
+    // This portfolio project is an interactive concept, not a live venue.
+    // Keep the completed form visible so visitors can inspect the flow without
+    // implying that a real reservation was transmitted.
+    setStatus("demo");
   };
 
   return (
@@ -46,28 +65,61 @@ const Reservation = () => {
         transition={{ duration: 0.6, delay: 0.1 }}
         className="grid gap-6 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)]"
       >
-        <form className="vl-card grid gap-4 sm:grid-cols-2" onSubmit={handleSubmit} noValidate>
-          <input type="text" placeholder={labels.name} className={inputCls} />
-          <input type="email" placeholder={labels.email} className={inputCls} />
-          <input type="tel" placeholder={labels.phone} className={inputCls} />
-          <input type="date" aria-label={labels.date} className={inputCls} />
-          <input
-            type="number"
-            min={1}
-            placeholder={labels.guests}
-            className={`${inputCls} sm:col-span-2`}
-          />
+        <form className="vl-card grid gap-4 sm:grid-cols-2" onSubmit={handleSubmit}>
+          <div>
+            <label htmlFor="reservation-name" className="mb-2 block text-xs font-medium text-slate-300">{labels.name}</label>
+            <input id="reservation-name" name="name" type="text" autoComplete="name" required placeholder={labels.name} className={inputCls} />
+          </div>
+          <div>
+            <label htmlFor="reservation-email" className="mb-2 block text-xs font-medium text-slate-300">{labels.email}</label>
+            <input id="reservation-email" name="email" type="email" autoComplete="email" placeholder={labels.email} className={inputCls} />
+          </div>
+          <div>
+            <label htmlFor="reservation-phone" className="mb-2 block text-xs font-medium text-slate-300">{labels.phone}</label>
+            <input id="reservation-phone" name="phone" type="tel" autoComplete="tel" placeholder={labels.phone} className={inputCls} />
+          </div>
+          <div>
+            <label htmlFor="reservation-date" className="mb-2 block text-xs font-medium text-slate-300">{labels.date}</label>
+            <input id="reservation-date" name="date" type="date" required className={inputCls} />
+          </div>
+          <div>
+            <label htmlFor="reservation-time" className="mb-2 block text-xs font-medium text-slate-300">{labels.time}</label>
+            <input id="reservation-time" name="time" type="time" className={inputCls} />
+          </div>
+          <div>
+            <label htmlFor="reservation-guests" className="mb-2 block text-xs font-medium text-slate-300">{labels.guests}</label>
+            <input
+              id="reservation-guests"
+              name="guests"
+              type="number"
+              min={1}
+              required
+              placeholder={labels.guests}
+              className={inputCls}
+            />
+          </div>
+          <div className="sm:col-span-2">
+            <label htmlFor="reservation-message" className="mb-2 block text-xs font-medium text-slate-300">{labels.message}</label>
+            <textarea id="reservation-message" name="message" rows={3} placeholder={labels.message} className={`${inputCls} resize-none`} />
+          </div>
           <button
             type="submit"
             className="sm:col-span-2 inline-flex items-center justify-center rounded-full bg-accent px-6 py-3 text-xs font-semibold uppercase tracking-[0.22em] text-slate-950 transition hover:bg-accent-soft shadow-lg shadow-purple-500/30"
           >
             {labels.submit}
           </button>
-          {isSubmitted && (
-            <div className="sm:col-span-2 rounded-xl border border-emerald-400/30 bg-emerald-500/10 px-4 py-3 text-sm text-emerald-200">
-              We got your request. Our team will confirm within 24 hours via WhatsApp or email.
-            </div>
-          )}
+          <div className="sm:col-span-2" aria-live="polite" aria-atomic="true">
+            {status === "demo" && (
+              <div className="rounded-xl border border-purple-400/30 bg-purple-500/10 px-4 py-3 text-sm text-purple-100">
+                Concept preview only — your details were validated in this browser, but no reservation was sent or stored.
+              </div>
+            )}
+            {status === "error" && (
+              <div className="rounded-xl border border-rose-400/30 bg-rose-500/10 px-4 py-3 text-sm text-rose-100">
+                Complete the required fields and provide either an email address or phone number.
+              </div>
+            )}
+          </div>
         </form>
 
         <aside className="vl-card">

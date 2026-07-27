@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Disc3, Menu, X } from "lucide-react";
 import { getNavigation, getSite } from "../utils/content";
 
@@ -13,9 +13,18 @@ const Navbar = () => {
     setOpen(false);
   };
 
+  useEffect(() => {
+    if (!open) return;
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setOpen(false);
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [open]);
+
   return (
     <header className="fixed inset-x-0 top-0 z-30 border-b border-white/5 bg-black/40 backdrop-blur-xl">
-      <nav className="vl-container flex h-16 items-center justify-between gap-4 sm:h-20">
+      <nav aria-label="Primary navigation" className="vl-container flex h-16 items-center justify-between gap-4 sm:h-20">
         <a
           href="#top"
           className="flex items-center gap-2 text-sm font-medium text-slate-100"
@@ -24,6 +33,9 @@ const Navbar = () => {
             <Disc3 className="h-4 w-4" />
           </span>
           <span className="text-sm font-semibold tracking-tight">{site.name}</span>
+          <span className="hidden rounded-full border border-purple-300/30 bg-purple-400/10 px-2 py-1 text-[9px] font-semibold uppercase tracking-[0.18em] text-purple-200 sm:inline-flex">
+            Concept by Plex
+          </span>
         </a>
 
         <div className="hidden items-center gap-8 md:flex">
@@ -50,13 +62,16 @@ const Navbar = () => {
           type="button"
           className="inline-flex items-center justify-center rounded-full border border-white/10 bg-black/40 p-2 text-slate-100 md:hidden"
           onClick={() => setOpen((prev) => !prev)}
+          aria-label={open ? "Close navigation menu" : "Open navigation menu"}
+          aria-expanded={open}
+          aria-controls="velvet-mobile-navigation"
         >
           {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </button>
       </nav>
 
       {open && (
-        <div className="border-t border-white/10 bg-black/80 backdrop-blur-xl md:hidden">
+        <div id="velvet-mobile-navigation" className="border-t border-white/10 bg-black/80 backdrop-blur-xl md:hidden">
           <div className="vl-container flex flex-col gap-4 py-4">
             <div className="flex flex-col gap-3 text-xs font-medium uppercase tracking-[0.22em] text-slate-200">
               {navigation.links.map((link) => (

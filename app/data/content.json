@@ -23,7 +23,7 @@
     "highlight": "late stories & slow house.",
     "subheadline": "Signature cocktails, curated DJs, and a low-light lounge atmosphere until late. Reserve your table and arrive when the lights are already dim.",
     "primaryCta": "Book a table",
-    "secondaryCta": "View upcoming events",
+    "secondaryCta": "View sample nights",
     "scrollCta": "Scroll to explore"
   },
   "about": {
@@ -42,12 +42,12 @@
     ]
   },
   "events": {
-    "title": "Upcoming",
+    "title": "Sample",
     "highlight": "Nights",
-    "subtitle": "Rotating DJs, themed nights, and one-off takeovers.",
+    "subtitle": "An evergreen concept schedule showing recurring DJs, themed nights, and takeovers.",
     "items": [
       {
-        "date": "Fri • 12 Apr",
+        "date": "Every Friday",
         "name": "Velvet Fridays",
         "artist": "DJ Lina V.",
         "tag": "Deep House",
@@ -55,7 +55,7 @@
         "ctaLabel": "Book table"
       },
       {
-        "date": "Sat • 13 Apr",
+        "date": "Every Saturday",
         "name": "Midnight Stories",
         "artist": "Markus Len",
         "tag": "House & Disco",
@@ -63,7 +63,7 @@
         "ctaLabel": "Reserve VIP"
       },
       {
-        "date": "Thu • 18 Apr",
+        "date": "Selected Thursdays",
         "name": "Industry Night",
         "artist": "Local Residents",
         "tag": "Industry",
@@ -239,7 +239,7 @@
     }
   },
   "footer": {
-    "disclaimer": "Velvet Lounge promotes responsible enjoyment. Entry strictly 21+ with valid ID.",
+    "disclaimer": "Interactive concept by Plex. Velvet Lounge, its schedule, prices and contact details are fictional and shown for portfolio demonstration only.",
     "links": {
       "primary": [
         { "label": "Events", "href": "#events" },
